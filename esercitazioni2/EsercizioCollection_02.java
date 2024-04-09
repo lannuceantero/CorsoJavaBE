@@ -14,7 +14,7 @@ public class EsercizioCollection_02
 		
 		Scanner read = new Scanner (System.in);
 		int res;
-		int casuale;
+		int numCasuale;
 		
 		boolean condizione = true;
 		
@@ -22,43 +22,45 @@ public class EsercizioCollection_02
 		System.out.println("Quanti numeri casuali vuoi estrarre da un set di 90 numeri?");
 		//catturo la risposta
 		res = read.nextInt();
-				
-		Random r = new Random();
 		
-		ArrayList <Integer> numeriEstratti = new ArrayList <Integer> ();
-		
-		//ciclo per avere TANTI NUMERI CASUALI quanti l'utente VUOLE
-		for(int i = 0; i<res; i++)
+		if(res>90)
 		{
-		
-			casuale = r.nextInt(91); //voglio numero casuale DA 1 a 90
+			System.out.println("Non puoi inserire più di 90 numeri");
+		}
+		else  //implicito SE l'utente mette da 1-90 ESEGUE il codice:
+		{
+			Random r = new Random();
 			
-
-
-				if(numeriEstratti.contains(casuale))
-				{
-						System.out.println("error");
-				}
-				else
-					do 
-					{
-					numeriEstratti.add(casuale);
-					}
-					while(true);
-					
+			ArrayList <Integer> numeriEstratti = new ArrayList <Integer> ();
+			
+			//ciclo per avere TANTI NUMERI CASUALI quanti l'utente VUOLE
+			for(int i = 0; i<res; i++)
+			{
+			
+				numCasuale = r.nextInt(91); //voglio numero casuale DA 1 a 90
 				
-			
+					if(numeriEstratti.contains(numCasuale))
+					{
+						i--;          //SE (numeriEstratti.contains(numCasuale) i-- che sta per RIFAI IL GIRO!
+					}
+		
+					else  //implicitamente cioè se numeriEstratti NON continiene numCasuale
+					{
+						numeriEstratti.add(numCasuale);   //AGGIUNGO numCasuale all'arrayList numeriEstratti
+					}
+						
+				//stampo i numeri casuali.	
+				System.out.println(numCasuale);
 
+				
+				
+				
+				
+			}
 			
-			System.out.println(casuale);
-
-			
-			
-			
-			
+			//System.out.println(numeriEstratti);
 		}
 		
-		System.out.println(numeriEstratti);
 		
 		
 	

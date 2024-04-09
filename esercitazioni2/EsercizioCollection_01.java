@@ -37,6 +37,14 @@ public class EsercizioCollection_01
 			System.out.println(nomes.get(i) +" "+ i);
 		}
 		
+		System.out.println("------stampo con foreach-------");
+		
+		int indice =0;
+		for (String nome : nomes)
+		{
+			System.out.println(indice++ + " "+ nome);
+		}
+		
 		//numero presenti nell'ArrayList
 		
 		System.out.println("L'array è composto da "+ nomes.size() + " elementi");
@@ -44,6 +52,9 @@ public class EsercizioCollection_01
 		
 		//rimozione di TUTTI gli elementi dell'arrayList  ----> metodo opportuno .removeAll()
 		nomes.removeAll(nomes);
+		
+		//alternativa:        .clear()
+		//nomes.clear();
 		
 		System.out.println(nomes);
 	
