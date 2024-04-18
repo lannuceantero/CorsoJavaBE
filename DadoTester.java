@@ -57,7 +57,17 @@ public class DadoTester
 //			Per ogni dado il cui numero estratto è un multiplo di 2 (+6 punti sul risultato finale) altrimenti (0 punti sul risultato finale). 
 //			Calcola i punti totalizza con un singolo lancio di 3 dadi;
 			
-			if(numRandomDado1%2==0 || numRandomDado2%2==0 || numRandomDado3%2==0)
+			if(numRandomDado1%2==0 )
+			{
+				for(int i=0; i<numDati; i++)
+					risultatoFinale = sommaDeiTreDadi +6;
+			}
+			else if(numRandomDado2%2==0 )
+			{
+				for(int i=0; i<numDati; i++)
+					risultatoFinale = sommaDeiTreDadi +6;	
+			}
+			else if ( numRandomDado3%2==0)
 			{
 				for(int i=0; i<numDati; i++)
 					risultatoFinale = sommaDeiTreDadi +6;
