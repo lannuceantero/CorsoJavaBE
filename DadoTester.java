@@ -7,7 +7,7 @@ public class DadoTester
 
 	public static void main(String[] args) 
 	{
-//		Costruisci una classe DadoTester per creare il seguente set di dadi (6 facce, 12 facce, 20 facce)
+//		   Costruisci una classe DadoTester per creare il seguente set di dadi (6 facce, 12 facce, 20 facce)
 
 //			Gioco: se la somma dei 3 dadi lanciati contemporanemente è un numero superiore al 26 
 //		   (+10 punti sul risultato finale) altrimenti (0 punti sul risultato finale).
@@ -21,9 +21,13 @@ public class DadoTester
 			Dado dado2 = new Dado(12);
 			Dado dado3 = new Dado(20);
 			
-			int numDati =3;
 		
-			int risultatoFinale =0;
+			int risultatoFinale =0 ;
+			int bonusDado1 =0;
+			int bonusDado2 =0;
+			int bonusDado3 =0;
+			
+			
 			
 			int numRandomDado1 = dado1.lancia();
 			int numRandomDado2 = dado2.lancia();
@@ -51,37 +55,32 @@ public class DadoTester
 			}
 			
 			
-			System.out.println("Risultato finale somma 3 dati + (con bonus +10 o +0) è: " +risultatoFinale);
+			System.out.println("Risultato finale somma 3 dati + bonus +10 (SE la somma è >26) è: " +risultatoFinale);
 			
 			
 //			Per ogni dado il cui numero estratto è un multiplo di 2 (+6 punti sul risultato finale) altrimenti (0 punti sul risultato finale). 
 //			Calcola i punti totalizza con un singolo lancio di 3 dadi;
 			
 			if(numRandomDado1%2==0 )
+			{		
+				risultatoFinale = risultatoFinale+ 6;
+			}		
+			if(numRandomDado2%2==0)
 			{
-				for(int i=0; i<numDati; i++)
-					risultatoFinale = sommaDeiTreDadi +6;
+				risultatoFinale = risultatoFinale+ 6;
 			}
-			else if(numRandomDado2%2==0 )
+			if(numRandomDado3%2==0)
 			{
-				for(int i=0; i<numDati; i++)
-					risultatoFinale = sommaDeiTreDadi +6;	
-			}
-			else if ( numRandomDado3%2==0)
-			{
-				for(int i=0; i<numDati; i++)
-					risultatoFinale = sommaDeiTreDadi +6;
-			}
-			else
-			{
-				risultatoFinale = sommaDeiTreDadi +0;
-			}
+				risultatoFinale = risultatoFinale+ 6;
+			}			
 			
+			//ciclo FOR per ogni dado..
 			
-			System.out.println("Risultato finale somma 3 dati + (con bonus +6 o +0) è: " +risultatoFinale); 
+	
+			
+			System.out.println("Risultato finale somma 3 dati + bonus +6/dato (SE multiplo di 2) è: " + (risultatoFinale)); 
 			
 
-		
 		
 		
 	}
